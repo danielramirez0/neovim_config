@@ -1,3 +1,3 @@
 require("daramirez.remap")
-print("daramirez init")
+require("daramirez.set")
 
