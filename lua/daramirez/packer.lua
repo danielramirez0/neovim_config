@@ -8,12 +8,13 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
 
+
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-  
+
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
@@ -21,7 +22,13 @@ return require('packer').startup(function(use)
 		  vim.cmd('colorscheme rose-pine')
 	  end
   })
-
+  use({
+      'folke/tokyonight.nvim',
+      as = 'tokyonight',
+      config = function()
+          vim.cmd('colorscheme tokyonight')
+      end
+  })
   use {
 	  'nvim-treesitter/nvim-treesitter',
 	  run = function()
@@ -51,10 +58,11 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
-  use { 
+  use {
 	  "williamboman/mason.nvim",
 	  "williamboman/mason-lspconfig.nvim",
 	  "neovim/nvim-lspconfig",
   }
+  use { 'voldikss/vim-floaterm' }
 
 end)
